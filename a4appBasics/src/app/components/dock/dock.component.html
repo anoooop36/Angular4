@@ -1,0 +1,43 @@
+<div >
+    <div ngDraggable >
+      <form >
+        <table id="t01">
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th> 
+            <th>Age</th>
+          </tr>
+          <tr *ngFor='let p of personList'>
+            <td >{{p.firstName}}</td>
+            <td>{{p.lastName}}</td>
+            <td>
+              <input type="number" [(ngModel)]="p.age" name="age">
+              </td>
+          </tr>
+         
+        </table>
+        <button (click)='onClickAdd()'>Add age</button>
+        <label for="total">Total: {{total}}</label>
+        <button (click)="myFunction()">Try it</button>
+        
+        
+      </form>
+    </div>
+
+    
+    <div ngDraggable >
+            <table id="t01">
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th> 
+                  <th>Age+5years</th>
+                </tr>
+                <tr *ngFor='let p of personList'>
+                    <td >{{p.firstName}}</td>
+                    <td>{{p.lastName}}</td>
+                    <td>{{p.age+5}}</td>
+                </tr>
+              </table>
+        </div>
+    
+  </div>    
