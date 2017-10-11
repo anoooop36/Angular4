@@ -29,3 +29,23 @@ h1 {
       background-color: black;
       color: white;
   }
+
+  #a201{
+      background-color: #9C9CB4;
+    text-align: end;
+    border: ridge;
+    border-width: thick;
+    width: fit-content;
+ }
+
+ #a202{
+     float: left;
+     color:black;
+
+ }
+ #a203{
+    background-color: white;
+}
+
+
+

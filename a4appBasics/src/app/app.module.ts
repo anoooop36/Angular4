@@ -5,6 +5,9 @@ import { AngularDraggableModule } from 'angular2-draggable';
 import { DockComponent } from './components/dock/dock.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule,Routes} from '@angular/router';
+import { CommonModule } from '@angular/common';  
+
+
 
 const appRoutes: Routes = [
   {  path:'',component:DockComponent},
@@ -19,7 +22,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AngularDraggableModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,43 +1,52 @@
-<div >
-    <div ngDraggable >
+<div >    
+    <div ngDraggable id="a201" >
       <form >
-        <table id="t01">
-          <tr>
-            <th>Firstname</th>
-            <th>Lastname</th> 
-            <th>Age</th>
-          </tr>
-          <tr *ngFor='let p of personList'>
-            <td >{{p.firstName}}</td>
-            <td>{{p.lastName}}</td>
-            <td>
-              <input type="number" [(ngModel)]="p.age" name="age">
-              </td>
-          </tr>
-         
-        </table>
-        <button (click)='onClickAdd()'>Add age</button>
-        <label for="total">Total: {{total}}</label>
-        <button (click)="myFunction()">Try it</button>
+        <div id="a202"> App Window_1</div>
+              <button (click)='onClickMinimize()'>-</button>
+        <div *ngIf=button1 id="a203">
+            <table id="t01" >
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th> 
+                  <th>Age</th>
+                </tr>
+                <tr *ngFor='let p of personList'>
+                  <td >{{p.firstName}}</td>
+                  <td>{{p.lastName}}</td>
+                  <td>
+                    <input type="number" [(ngModel)]="p.age" name="age">
+                    </td>
+                </tr>
+               
+              </table>
+              <div>
+                  <button (click)='onClickAdd()'>Add age</button>
+                  <label for="total">Total: {{total}}</label>
+                  <button (click)="myFunction()">Try it</button>
+              </div>
+        </div>
         
         
       </form>
     </div>
 
     
-    <div ngDraggable >
-            <table id="t01">
-                <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th> 
-                  <th>Age+5years</th>
-                </tr>
-                <tr *ngFor='let p of personList'>
-                    <td >{{p.firstName}}</td>
-                    <td>{{p.lastName}}</td>
-                    <td>{{p.age+5}}</td>
-                </tr>
-              </table>
-        </div>
+    <div ngDraggable id="a201" >
+        <div id="a202">App Window_2 </div>
+        <button (click)='onClickMinimize2()'>-</button>
+            <div *ngIf=button2>
+                <table id="t01">
+                    <tr>
+                      <th>Firstname</th>
+                      <th>Lastname</th> 
+                      <th>Age+5years</th>
+                    </tr>
+                    <tr *ngFor='let p of personList'>
+                        <td >{{p.firstName}}</td>
+                        <td>{{p.lastName}}</td>
+                        <td>{{p.age+5}}</td>
+                    </tr>
+                </table>
+            </div>
+    </div>
     
-  </div>    

@@ -8,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class DockComponent implements OnInit {
   personList:Person[];
   total:number;
-  constructor() { this.total=0;}
+  button1:boolean;
+  button2:boolean;
+  constructor() { this.total=0;this.button1=true;this.button2=true;}
 
   ngOnInit() {
+    console.log("ngOnInitCalled");
     this.personList=[{firstName:'Anoop',lastName:'Chaudhary',age:24},{firstName:'Atul',lastName:'Sachan',age:23},{firstName:'Ajay',lastName:'Mohan',age:23}];
   }
 
@@ -26,6 +29,13 @@ export class DockComponent implements OnInit {
   
   myFunction() {
     var myWindow = window.open("/", "", "width=200,height=100");
+}
+
+onClickMinimize(){
+  this.button1=!this.button1;
+}
+onClickMinimize2(){
+  this.button2=!this.button2;
 }
 
 }
