@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+            <!--Instantiating custom element Option 1-->
+            <my-comment></my-comment>
+    </body>
+  
+    <script>
+    var SlickTabs = Object.create(HTMLElement.prototype);
+    SlickTabs.createdCallback = function(){
+        this.innerHTML = "<h1>What's in your Mind!</h1><textarea></textarea></br><button type='button'>Submit</button>"
+    }
+
+    var Comment = document.registerElement('my-comment',{
+        prototype: SlickTabs
+    });
+
+    //not working Option 2
+   // var commentObj = new SlickTabs();
+   //instantiating custom elements Option 3
+    var com = document.createElement('my-comment');
+    document.body.appendChild(com);
+    </script>
+</html>

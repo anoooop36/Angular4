@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+        <comment-form>
+            <h1>What's in your Mind</h1>
+            <p class="message">Write down things that are in your mind . We will be back soon!</p>
+
+        </comment-form>
+
+
+       <template>
+           <fieldset>
+               <legend>
+                   <content select="h1"></content>
+               </legend>
+               <content select="p.message"></content>
+               <textarea style="width:400px; height:200px;"></textarea>
+               <br/>
+               <input type="submit" value="Submit Comment">
+               <content select=".footer"></content>
+           </fieldset>
+       </template>
+        
+    </body>
+
+    <script>
+    var CommentProto = Object.create(HTMLElement.prototype);
+    CommentProto.createdCallback = function(){
+        var template = document.querySelector('template');
+        var clone = document.importNode(template.content,true);
+        var shadow = this.createShadowRoot();
+        shadow.appendChild(clone);
+    }
+
+    document.registerElement('comment-form',{
+        prototype: CommentProto
+    });
+    //we can use shadow tag for creating insertion point
+    </script>
+
+</html>

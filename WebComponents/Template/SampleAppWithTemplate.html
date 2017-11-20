@@ -1,0 +1,36 @@
+<html>
+    <body>
+
+        <template id="root">
+            <div class="root">Root</div>
+            <template id="child">
+                <div class="child">Child</div>
+                <style>
+                    .child{
+                        color:blue;
+                    }
+                </style>
+            </template>
+            <style>
+                .root{
+                    color:red;
+                }
+            </style>
+        </template>
+        
+        <script>
+            var template = document.querySelector('#root');
+            //console.log(template.content);
+            var clone = document.importNode(template.content,true);
+            console.log(clone);
+           // document.body.appendChild(clone);
+           document.body.appendChild(clone);
+           var template = document.querySelector('#child');
+           
+            //console.log(template.content);
+            var clone = document.importNode(template.content,true);
+            clone.querySelector('.child').textContent='New Data injected';
+           document.body.appendChild(clone);
+        </script>
+    </body>
+</html>

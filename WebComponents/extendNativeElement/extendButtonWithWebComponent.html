@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <button is="custom-button">Submit</button>
+    </body>
+    <script>
+        var Proto = Object.create(HTMLButtonElement.prototype);
+        Proto.createdCallback = function(){
+            this.innerHTML = "custom Button";
+            this.value="Default value";
+            this.style.color = "orange";
+        }
+
+        var customButton = document.registerElement('custom-button',{
+            prototype: Proto,
+            extends: 'button'
+        });
+    </script>
+</html>
