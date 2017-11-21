@@ -1,0 +1,13 @@
+<html>
+        <head>
+            <link rel="import" href="customElementWithWebComponent.html" id="custom-element">
+        </head>
+        <body>
+            <Script>
+                //CORS problem can be solved by running on server use Plunker
+                var content = document.querySelector('#custom-element').import;
+                var element = content.querySelector('my-comment');
+                document.body.appendChild(element);
+            </Script>
+        </body>
+    </html>
